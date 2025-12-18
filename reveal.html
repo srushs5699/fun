@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I Got Into Google</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="center">
+
+  <h1 class="headline">
+    I got into 
+    <span class="google-text">
+      <span class="g-blue">G</span>
+      <span class="g-red">o</span>
+      <span class="g-yellow">o</span>
+      <span class="g-blue">g</span>
+      <span class="g-green">l</span>
+      <span class="g-red">e</span>
+    </span>
+  </h1>
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function launchConfetti() {
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 7,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    launchConfetti();
+  </script>
+
+</body>
+</html>
