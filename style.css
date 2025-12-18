@@ -36,3 +36,24 @@ body {
 .g-red { color: #DB4437; }
 .g-yellow { color: #F4B400; }
 .g-green { color: #0F9D58; }
+
+/* Flashing Google text */
+.flashing {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
