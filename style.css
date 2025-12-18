@@ -12,6 +12,7 @@ body {
   flex-direction: column;
 }
 
+/* BUTTON */
 .main-button {
   font-size: 24px;
   padding: 20px 40px;
@@ -26,14 +27,25 @@ body {
   background-color: #357ae8;
 }
 
+/* HEADLINE */
 .headline {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
   text-align: center;
   margin: 0;
+}
+
+/* Entrance animation */
+.headline-inner {
+  display: inline-block;
   animation: slideIn 1.2s ease-out forwards;
 }
 
+/* GOOGLE TEXT */
+.google-text {
+  display: inline-block;
+  font-size: 1.2em;
+}
 
 /* Google colors */
 .g-blue { color: #4285F4; }
@@ -41,55 +53,12 @@ body {
 .g-yellow { color: #F4B400; }
 .g-green { color: #0F9D58; }
 
-/* Flashing Google text */
+/* Google pulse */
 .flashing {
-  animation: pulse 1.2s infinite;
+  animation: pulse 1.2s infinite ease-in-out;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 0.85;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.google-text span {
-  animation: colorFlash 1.5s infinite alternate;
-}
-
-@keyframes colorFlash {
-  from {
-    filter: brightness(1);
-  }
-  to {
-    filter: brightness(1.4);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.google-text {
-  display: inline-block;
-  font-size: 1.2em; /* makes Google bigger than rest */
-}
-
+/* Individual letter bounce */
 .google-text span {
   display: inline-block;
   animation: bounce 1.5s infinite ease-in-out;
@@ -102,11 +71,33 @@ body {
 .google-text span:nth-child(5) { animation-delay: 0.4s; }
 .google-text span:nth-child(6) { animation-delay: 0.5s; }
 
+/* ANIMATIONS */
+
+@keyframes slideIn {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
